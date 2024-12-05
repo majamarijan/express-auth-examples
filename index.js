@@ -45,13 +45,18 @@ app.use('/users/:id', async (req, res, next) => {
     req.user = user;
     next();
   } else {
-    res.status(500).send('<h2>No user found</h2>');
+    res.status(200).send('<h2>No user found</h2>');
   }
 })
 
 app.get('/users/:id', (req, res) => {
   res.send(`<h1>Welcome ${req.user.name}!</h1><p>Username: ${req.user.name}</p><p>email: ${req.user.email}</p>`);
 });
+
+// login
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, "src", "login.html"));
+})
 
 //check for admin
 async function adminMiddelware(req, res, next) {

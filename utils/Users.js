@@ -42,6 +42,13 @@ class Users {
 
   async getUsers() {
     const users = await usersData();
+    if (!file.existsSync(users_path)) {
+      file.writeFile(users_path, JSON.stringify(users, null, 2), (err) => {
+        if (err) {
+          console.log(err);
+        }
+      });
+    }
     return users;
   }
 
