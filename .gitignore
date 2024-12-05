@@ -1,4 +1,4 @@
-nodemodules/
+node_modules/
 
 .npm
 
@@ -8,3 +8,6 @@ nodemodules/
 .ven
 .env.development.local
 .env.local
+
+
+package-lock.json
