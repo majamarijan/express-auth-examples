@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Users</title>
+	</head>
+	<body>
+		<h1>Find Users</h1>
+		<form>
+			<label for="userid">User ID:</label>
+			<input
+				type="number"
+				id="userid"
+				name="userid"
+				required
+				min="1"
+				max="10"
+				value="1"
+			/>
+			<button>Find</button>
+		</form>
+		<div class="user"></div>
+
+		<script>
+			const form = document.querySelector('form');
+			const user = document.querySelector('.user');
+
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+
+				const userid = document.getElementById('userid').value;
+
+				if (userid) {
+					try {
+						const response = await fetch(
+							`http://localhost:3000/users/user?userid=${userid}`
+						);
+						const data = await response.json();
+						user.innerHTML = `<p>Name: ${data.user.name}</p><p>Username: ${data.user.username}</p><p>Email: ${data.user.email}</p>`;
+					} catch (error) {
+						console.log(error);
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

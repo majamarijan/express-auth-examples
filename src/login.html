@@ -39,6 +39,16 @@
 							},
 							body: JSON.stringify({ username, password }),
 						});
+
+						if (response.ok) {
+							window.location.href = '/dashboard?username=' + username;
+						}
+						//else {
+						// 	const error = await response.json();
+						// 	console.log(error);
+						// 	const errorMessage = document.querySelector('.error-message');
+						// 	errorMessage.textContent = error.message;
+						// }
 					} catch (err) {
 						console.log(err);
 					}

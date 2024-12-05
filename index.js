@@ -4,7 +4,7 @@ const path = require("path");
 const { User } = require("./utils/Users");
 const file = require('fs');
 
-
+app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "src")));
@@ -25,7 +25,7 @@ app.get('/about', (req, res) => {
   res.sendFile(path.join(__dirname, "src", "about.html"));
 })
 
-
+//data path
 app.use('/data', async (req, res, next) => {
   const users = await User.getUsers();
   if (users) {
@@ -39,19 +39,57 @@ app.get('/data', (req, res, next) => {
 
 
 // get specific user
-app.use('/users/:id', async (req, res, next) => {
-  const user = await User.getUser(req.params.id);
-  if (user) {
-    req.user = user;
-    next();
-  } else {
-    res.status(500).send('<h2>No user found</h2>');
+app.use('/users/user', async (req, res, next) => {
+  const id = req.query['userid'];
+  if (id) {
+    const user = await User.getUser(id);
+    if (user) {
+      req.user = user;
+      next();
+    }
   }
 })
 
-app.get('/users/:id', (req, res) => {
-  res.send(`<h1>Welcome ${req.user.name}!</h1><p>Username: ${req.user.name}</p><p>email: ${req.user.email}</p>`);
-});
+app.get('/users/user', (req, res) => {
+  res.json({ message: 'OK', user: req.user });
+})
+
+app.get('/users', (req, res) => {
+  res.sendFile(path.join(__dirname, "src", "users.html"));
+})
+
+
+
+
+
+//login
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, "src", "login.html"));
+})
+
+app.post('/auth', (req, res, next) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  if (username === user.username && password === user.auth.password) {
+    res.send('ok')
+  } else {
+    res.redirect('/login')
+  }
+})
+
+
+
+app.get('/dashboard', (req, res, next) => {
+  const id = req.query['username'];
+  if (id === user.username) {
+    res.send(`<h1>Welcome ${user.name}!</h1><p>Username: ${user.name}</p><p>email: ${user.email}</p><a href='/logout'>Logout</a>`);
+  }
+})
+
+app.get('/logout', (req, res) => {
+  res.redirect('/')
+})
+
 
 //check for admin
 async function adminMiddelware(req, res, next) {

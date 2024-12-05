@@ -2,8 +2,8 @@
   {
     "id": 1,
     "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
+    "username": "bret",
+    "email": "sincere@april.biz",
     "address": {
       "street": "Kulas Light",
       "suite": "Apt. 556",
@@ -20,13 +20,14 @@
       "name": "Romaguera-Crona",
       "catchPhrase": "Multi-layered client-server neural-net",
       "bs": "harness real-time e-markets"
-    }
+    },
+    "password": "JSb6SQnEOy"
   },
   {
     "id": 2,
     "name": "Ervin Howell",
-    "username": "Antonette",
-    "email": "Shanna@melissa.tv",
+    "username": "antonette",
+    "email": "shanna@melissa.tv",
     "address": {
       "street": "Victor Plains",
       "suite": "Suite 879",
@@ -43,13 +44,14 @@
       "name": "Deckow-Crist",
       "catchPhrase": "Proactive didactic contingency",
       "bs": "synergize scalable supply-chains"
-    }
+    },
+    "password": "olrDGn431S"
   },
   {
     "id": 3,
     "name": "Clementine Bauch",
-    "username": "Samantha",
-    "email": "Nathan@yesenia.net",
+    "username": "samantha",
+    "email": "nathan@yesenia.net",
     "address": {
       "street": "Douglas Extension",
       "suite": "Suite 847",
@@ -66,13 +68,14 @@
       "name": "Romaguera-Jacobson",
       "catchPhrase": "Face to face bifurcated interface",
       "bs": "e-enable strategic applications"
-    }
+    },
+    "password": "b3QzsdmKZW"
   },
   {
     "id": 4,
     "name": "Patricia Lebsack",
-    "username": "Karianne",
-    "email": "Julianne.OConner@kory.org",
+    "username": "karianne",
+    "email": "julianne.oconner@kory.org",
     "address": {
       "street": "Hoeger Mall",
       "suite": "Apt. 692",
@@ -89,13 +92,14 @@
       "name": "Robel-Corkery",
       "catchPhrase": "Multi-tiered zero tolerance productivity",
       "bs": "transition cutting-edge web services"
-    }
+    },
+    "password": "2z1st71zXy"
   },
   {
     "id": 5,
     "name": "Chelsey Dietrich",
-    "username": "Kamren",
-    "email": "Lucio_Hettinger@annie.ca",
+    "username": "kamren",
+    "email": "lucio_hettinger@annie.ca",
     "address": {
       "street": "Skiles Walks",
       "suite": "Suite 351",
@@ -112,13 +116,14 @@
       "name": "Keebler LLC",
       "catchPhrase": "User-centric fault-tolerant solution",
       "bs": "revolutionize end-to-end systems"
-    }
+    },
+    "password": "r5IDaaXknt"
   },
   {
     "id": 6,
     "name": "Mrs. Dennis Schulist",
-    "username": "Leopoldo_Corkery",
-    "email": "Karley_Dach@jasper.info",
+    "username": "leopoldo_corkery",
+    "email": "karley_dach@jasper.info",
     "address": {
       "street": "Norberto Crossing",
       "suite": "Apt. 950",
@@ -135,13 +140,14 @@
       "name": "Considine-Lockman",
       "catchPhrase": "Synchronised bottom-line interface",
       "bs": "e-enable innovative applications"
-    }
+    },
+    "password": "8GekW96zf6"
   },
   {
     "id": 7,
     "name": "Kurtis Weissnat",
-    "username": "Elwyn.Skiles",
-    "email": "Telly.Hoeger@billy.biz",
+    "username": "elwyn.skiles",
+    "email": "telly.hoeger@billy.biz",
     "address": {
       "street": "Rex Trail",
       "suite": "Suite 280",
@@ -158,13 +164,14 @@
       "name": "Johns Group",
       "catchPhrase": "Configurable multimedia task-force",
       "bs": "generate enterprise e-tailers"
-    }
+    },
+    "password": "25YtUoagvz"
   },
   {
     "id": 8,
     "name": "Nicholas Runolfsdottir V",
-    "username": "Maxime_Nienow",
-    "email": "Sherwood@rosamond.me",
+    "username": "maxime_nienow",
+    "email": "sherwood@rosamond.me",
     "address": {
       "street": "Ellsworth Summit",
       "suite": "Suite 729",
@@ -181,13 +188,14 @@
       "name": "Abernathy Group",
       "catchPhrase": "Implemented secondary concept",
       "bs": "e-enable extensible e-tailers"
-    }
+    },
+    "password": "5N98fMOQ0Q"
   },
   {
     "id": 9,
     "name": "Glenna Reichert",
-    "username": "Delphine",
-    "email": "Chaim_McDermott@dana.io",
+    "username": "delphine",
+    "email": "chaim_mcdermott@dana.io",
     "address": {
       "street": "Dayna Park",
       "suite": "Suite 449",
@@ -204,13 +212,14 @@
       "name": "Yost and Sons",
       "catchPhrase": "Switchable contextually-based project",
       "bs": "aggregate real-time technologies"
-    }
+    },
+    "password": "eQ5vZhfhKq"
   },
   {
     "id": 10,
     "name": "Clementina DuBuque",
-    "username": "Moriah.Stanton",
-    "email": "Rey.Padberg@karina.biz",
+    "username": "moriah.stanton",
+    "email": "rey.padberg@karina.biz",
     "address": {
       "street": "Kattie Turnpike",
       "suite": "Suite 198",
@@ -227,6 +236,7 @@
       "name": "Hoeger LLC",
       "catchPhrase": "Centralized empowering task-force",
       "bs": "target end-to-end models"
-    }
+    },
+    "password": "mEBfHyDWY2"
   }
 ]

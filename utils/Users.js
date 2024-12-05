@@ -1,60 +1,47 @@
-const { usersData } = require("../db");
+const { usersData } = require("../api.js");
 const file = require('fs');
 const path = require('path');
-const users_path = path.join(__dirname, 'db.json');
+const _users = require('../data/users.js');
+const { createPwd } = require("./createPasswords.js");
 
 
 class Users {
- 
+
   addUser(params) {
-    const user = {...params};
-    file.readFile(users_path, 'utf8', (err, data) => {
-      if (err) {
-        console.log(err);
-      }
-      const users = JSON.parse(data);
-      users.push(user);
-      file.writeFile(users_path, JSON.stringify(users, null, 2), (err) => {
-        if (err) {
-          console.log(err);
-        }
-      });
-    })
+    const user = { ...params };
+    _users.push(user);
+
+
     return user;
   }
 
   removeUser(id) {
-    file.readFile(users_path, 'utf8', (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        const users = JSON.parse(data);
-        const result = users.filter((user) => user.id !== Number(id));
-        file.writeFile(users_path, JSON.stringify(result, null, 2), (err) => {
-          if (err) {
-            console.log(err);
-          }
-        })
-      }
-    }) 
-    
+    const users = _users.filter((user) => user.id !== Number(id));
+    return users;
   }
 
   async getUsers() {
     const users = await usersData();
+    if (users.length > 0) {
+      // create json file
+      const updated = users.map((user) => {
+        return { ...user, username: user.username.toLowerCase(), email: user.email.toLowerCase(), password: createPwd() }
+      });
+      file.writeFile(path.join(__dirname, '../data/users.json'), JSON.stringify(updated, null, 2), (err) => {
+        if (err) {
+          console.log(err);
+        }
+      })
+    }
     return users;
   }
 
   async getUser(id) {
-    const user = await fetch(
-      `https://jsonplaceholder.typicode.com/users/${id}`
-    );
-    const data = await user.json();
-    if (data && data.id) {
-      return data;
-
+    const user = await _users.findUser(Number(id));
+    if (user && user.id) {
+      return user;
     }
-
+    return null;
   }
 
   updateUser(id, props) {
