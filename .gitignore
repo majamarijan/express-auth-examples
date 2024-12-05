@@ -1,0 +1,10 @@
+nodemodules/
+
+.npm
+
+.logs
+
+.env
+.ven
+.env.development.local
+.env.local
